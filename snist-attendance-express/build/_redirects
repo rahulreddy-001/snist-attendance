@@ -1,0 +1,5 @@
+/dashboard              /
+/dashboard              /login
+/                       /login
+/login                  /dashboard
+/api/* http://snist-attendance-pannel.eba-zhm7rqpi.ap-south-1.elasticbeanstalk.com/:splat 200

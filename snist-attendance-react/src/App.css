@@ -1,0 +1,72 @@
+.view {
+  margin: 0px 10vw;
+}
+.login-page {
+  min-height: 100vh;
+  background-color: rgb(216, 216, 216);
+}
+.icon-img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.icon-img img {
+  margin-top: 100px;
+  border-radius: 20px;
+  height: 100px;
+}
+.lastUpdate {
+  font-size: 11px;
+  display: flex;
+  flex-direction: row-reverse;
+  margin: 8px;
+  margin-bottom: 4px;
+  color: rgb(255, 112, 93);
+  font-weight: 900;
+}
+.info {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+}
+.feedback-btn {
+  font-size: 11px;
+  margin: 8px;
+  margin-bottom: 4px;
+  color: blue;
+  font-weight: 900;
+  cursor: pointer;
+}
+.lastUpdate-status {
+  font-size: 11px;
+  display: flex;
+  flex-direction: row-reverse;
+  margin: 8px;
+  margin-bottom: 4px;
+}
+.tables {
+  display: flex;
+}
+.graphBox {
+  margin: 10px 0px;
+  display: flex;
+  justify-content: space-around;
+}
+
+@media screen and (max-width: 750px) {
+  .tables {
+    display: block;
+  }
+  .graphBox {
+    display: block;
+  }
+  .view {
+    margin: 0px 0vw;
+  }
+}
+
+.graph {
+  background-color: rgba(255, 255, 255, 0.506);
+  border-radius: 10px;
+}

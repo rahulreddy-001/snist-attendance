@@ -1,4 +1,4 @@
-# SAP - SNIST Attendance Pannel
+# SAP - SNIST Attendance Portal
 
 An attendance dashboard for SNIST college students provides real-time monitoring of student attendance, displaying visual representations of attendance records.
 

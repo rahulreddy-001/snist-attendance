@@ -4,12 +4,13 @@ const qs = require("qs");
 const parseData = require("./parseHTML");
 
 const PORT = process.env.PORT || 3000;
-const HOST = "103.15.62.28";
+const HOST = "103.167.126.190";
 
 const app = express();
 
 //add your site url here
 //for local development use http://localhost:3000
+
 const whitelist = [
   `http://localhost:${PORT}`,
   "https://snist-attendance-b.onrender.com",
@@ -39,6 +40,7 @@ app.get("/login", (req, res) => {
 app.use(cors(corsOptions));
 
 app.post("/login", (req, res) => {
+  console.log(req.body);
   var config1 = {
     method: "post",
     headers: {

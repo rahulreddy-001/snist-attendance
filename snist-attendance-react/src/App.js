@@ -12,7 +12,7 @@ function App() {
         <Route
           path="/dashboard"
           element={
-            <Box sx={{ p: 1 }}>
+            <Box sx={{ p: 0 }}>
               <Dashboard />
             </Box>
           }

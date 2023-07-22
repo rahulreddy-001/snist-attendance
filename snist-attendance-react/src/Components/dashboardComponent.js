@@ -17,6 +17,7 @@ import TableView from "./tableComponent";
 import PieChart from "./Graphs/pieChatComopnent";
 import BarGraph from "./Graphs/barGraphComponent";
 import LineGraph from "./Graphs/lineGraphComponent";
+import RefreshComponent from "./refreshComponent";
 
 export default function Dashboard() {
   const navigate = useNavigate();
@@ -98,8 +99,9 @@ export default function Dashboard() {
   } else {
     return (
       <div>
+        <RefreshComponent status={updating} />
         <Header name={name} />
-        <RecentUpdate status={updating} />
+        <RecentUpdate />
         <div className="view">
           <BaseData mainStats={getMainStats(months, rule)} />
           <HeatGraph data={calGraphData(months)} />

@@ -7,6 +7,9 @@ import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { useNavigate } from "react-router-dom";
+
+import Notification from "./notification";
+
 import logo from "../Assets/logo.png";
 const theme = createTheme();
 
@@ -87,6 +90,7 @@ export default function SignIn() {
             </Box>
           </Box>
         </Container>
+        {/* <Notification /> */}
       </ThemeProvider>
     </div>
   );

@@ -70,3 +70,38 @@
   background-color: rgba(255, 255, 255, 0.506);
   border-radius: 10px;
 }
+
+.message-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  margin: 10px 0px;
+  background-color: rgba(255, 255, 255, 0.506);
+  border-radius: 2px;
+}
+
+.refresh {
+  display: flex;
+  margin: 0px 0px;
+  background: rgb(248, 170, 0);
+  border-radius: 2px;
+  padding: 0px;
+}
+.refresh__loder {
+  min-height: 3px;
+  background-color: rgba(255, 0, 0, 0.74);
+  animation: load 2s linear infinite;
+}
+
+@keyframes load {
+  0% {
+    width: 0%;
+  }
+  50% {
+    width: 100%;
+  }
+  100% {
+    width: 0%;
+  }
+}

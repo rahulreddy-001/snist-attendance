@@ -16,6 +16,7 @@
     "echarts-for-react": "^3.0.2",
     "faker": "^6.6.6",
     "json": "^11.0.0",
+    "mappls-web-maps": "^3.0.4",
     "react": "^18.2.0",
     "react-chartjs-2": "^5.0.1",
     "react-dom": "^18.2.0",

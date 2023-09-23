@@ -5,10 +5,15 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import { useNavigate } from "react-router-dom";
-import icon from "../Assets/icon.png";
+import icon from "../../../assets/icon.png";
+
+import { useDispatch } from "react-redux";
+import { logout } from "../../redux/sessionSlice";
 
 export default function Header({ name }) {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
@@ -28,12 +33,8 @@ export default function Header({ name }) {
           <Button
             color="inherit"
             onClick={() => {
-              localStorage.setItem("isLogged", 0);
-              localStorage.setItem("userid", "");
-              localStorage.setItem("password", "");
-              localStorage.setItem("recentLogin", "");
-              localStorage.setItem("baseData", "");
-              navigate("/login");
+              dispatch(logout());
+              navigate("/");
             }}
           >
             Logout

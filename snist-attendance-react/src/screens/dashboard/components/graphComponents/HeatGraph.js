@@ -19,6 +19,7 @@ const HeatGraph = ({ data }) => {
     }
     return edata;
   }
+
   let option = {
     tooltip: {
       show: true,
@@ -36,25 +37,25 @@ const HeatGraph = ({ data }) => {
         range: "2023",
         cellSize: ["auto", cellSize],
       },
-      {
-        top: height,
-        range: "2022",
-        cellSize: ["auto", cellSize],
-      },
+      // {
+      //   top: 17,
+      //   range: "2024",
+      //   cellSize: ["auto", cellSize],
+      // },
     ],
     series: [
       {
         type: "heatmap",
         coordinateSystem: "calendar",
-        calendarIndex: 1,
+        calendarIndex: 0,
         data: getVirtualData("2023"),
       },
-      {
-        type: "heatmap",
-        coordinateSystem: "calendar",
-        calendarIndex: 0,
-        data: getVirtualData("2022"),
-      },
+      // {
+      //   type: "heatmap",
+      //   coordinateSystem: "calendar",
+      //   calendarIndex: 0,
+      //   data: getVirtualData("2024"),
+      // },
     ],
   };
   return (
@@ -62,7 +63,7 @@ const HeatGraph = ({ data }) => {
       option={option}
       style={{
         width: "98.9%",
-        height: windowWidth > 1000 ? "32vh" : "14vh",
+        height: windowWidth > 1000 ? "20vh" : "16vh",
         padding: " 10px 15px 10px 0px ",
         margin: "-30px -10px 10px 0px",
         backgroundColor: "rgba(255, 255, 255, 0.506)",

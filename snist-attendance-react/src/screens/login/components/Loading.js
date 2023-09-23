@@ -2,7 +2,7 @@ import React from "react";
 import Skeleton from "@mui/material/Skeleton";
 import Stack from "@mui/material/Stack";
 
-export default function Load() {
+export default function Loading() {
   const [time, setTime] = React.useState(60);
   React.useEffect(() => {
     setTimeout(() => {

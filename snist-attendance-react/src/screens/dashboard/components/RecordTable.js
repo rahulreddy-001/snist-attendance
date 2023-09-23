@@ -12,9 +12,9 @@ import Typography from "@mui/material/Typography";
 import Paper from "@mui/material/Paper";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
-import { fDate, getS } from "./Stats/calc";
+import { fDate, getS } from "./calc";
 
-export default function TableView({ months }) {
+export default function RecordTable({ months }) {
   months = months.reverse();
   function Row(props) {
     const { row } = props;

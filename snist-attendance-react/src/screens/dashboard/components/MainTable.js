@@ -1,5 +1,4 @@
 import * as React from "react";
-import "../App.css";
 import Box from "@mui/material/Box";
 import Table from "@mui/material/Table";
 import TableCell from "@mui/material/TableCell";
@@ -8,7 +7,7 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 
-export default function BaseData({ mainStats }) {
+export default function MainTable({ mainStats }) {
   return (
     <Box sx={{ fontWeight: "bold", marginBottom: 5 }}>
       <div className="tables">

@@ -1,28 +1,14 @@
-// const MONTH_FULL = [
-//   "January",
-//   "February",
-//   "March",
-//   "April",
-//   "May",
-//   "June",
-//   "July",
-//   "August",
-//   "September",
-//   "October",
-//   "November",
-//   "December",
-// ];
-// const YEAR = new Date().getFullYear();
-
 const rpad = (monthArr) => {
   let res_monthArr = [];
   for (let dayArr of monthArr) {
+    let tempDayArr = Object.assign([], dayArr);
     let alen = dayArr.length;
     let ap = 8 - alen;
     for (let i = 0; i < ap; i += 1) {
-      dayArr.push("");
+      tempDayArr.push("");
     }
-    res_monthArr.push(dayArr);
+
+    res_monthArr.push(tempDayArr);
   }
   return res_monthArr;
 };
@@ -127,7 +113,7 @@ const calGraphData = (monthArr) => {
   return data;
 };
 
-const getMainStats = (months, rule) => {
+const getMainStats = (months) => {
   let a = 0,
     p = 0,
     t = 0,
@@ -164,7 +150,7 @@ const getMainStats = (months, rule) => {
   return { a, p, t, pe, col, a65, a75, l5, l10 };
 };
 
-const getlineData = (months, rule) => {
+const getlineData = (months) => {
   let p = 0,
     t = 0;
   let lineArr = [];
@@ -189,7 +175,7 @@ const getlineData = (months, rule) => {
   return { lineArr, lineLabels };
 };
 
-const getPAW = (months, rule) => {
+const getPAW = (months) => {
   let a = [0, 0, 0, 0, 0, 0];
   let p = [0, 0, 0, 0, 0, 0];
   for (let month of months) {

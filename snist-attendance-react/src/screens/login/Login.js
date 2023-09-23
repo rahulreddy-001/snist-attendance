@@ -30,7 +30,7 @@ export default function Login() {
   const serverStatus = useSelector((state) => state.ping);
 
   const [disabled, setDisabled] = React.useState(true);
-  const [message, setMessage] = React.useState("Login In");
+  const [message, setMessage] = React.useState("Login");
   const [error, setError] = React.useState(false);
   const [helperText, setHelperText] = React.useState("");
 
@@ -43,7 +43,7 @@ export default function Login() {
   React.useEffect(() => {
     if (serverStatus.data.success === true) {
       setDisabled(false);
-      setMessage("Login In");
+      setMessage("Login");
     } else {
       if (serverStatus.loading === false) {
         setMessage("Server not reachable");

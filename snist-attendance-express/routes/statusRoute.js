@@ -1,9 +1,6 @@
 const router = require("express").Router();
-const checkServerStatus = require("../controllers/ping");
+const statusCache = require("../controllers/cache/status");
 
-router.get("/", async (req, res) => {
-  let data = await checkServerStatus();
-  res.json(data);
-});
+router.get("/", statusCache);
 
 module.exports = router;

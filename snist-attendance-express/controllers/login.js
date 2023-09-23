@@ -33,13 +33,13 @@ function getAttendanceConfig(cookie, rollno) {
 const errorResponse = {
   success: false,
   data: {
-    message: "Something went wrong.",
+    message: "something went wrong",
   },
 };
 
 const errorCredentials = {
   success: false,
-  data: { message: "Invalid Credentials." },
+  data: { message: "invalid credentials" },
 };
 
 async function login(body) {

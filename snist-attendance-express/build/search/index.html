@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="apple-touch-icon"
+      sizes="57x57"
+      href="./fav/apple-icon-57x57.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="60x60"
+      href="./fav/apple-icon-60x60.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="72x72"
+      href="./fav/apple-icon-72x72.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="76x76"
+      href="./fav/apple-icon-76x76.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="114x114"
+      href="./fav/apple-icon-114x114.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="120x120"
+      href="./fav/apple-icon-120x120.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="./fav/apple-icon-144x144.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="./fav/apple-icon-152x152.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./fav/apple-icon-180x180.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="./fav/android-icon-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./fav/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="./fav/favicon-96x96.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./fav/favicon-16x16.png"
+    />
+
+    <link rel="manifest" href="./fav/manifest.json" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="msapplication-TileImage" content="./fav/ms-icon-144x144.png" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta
+      name="description"
+      content="FindRoom is a web app that helps you find your way around the campus in SNIST"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://snist.netlify.app/search" />
+    <meta property="og:title" content="Snist Attendance Portal" />
+    <meta
+      property="og:description"
+      content="FindRoom is a web app that helps you find your way around the campus in SNIST"
+    />
+    <meta
+      property="og:image"
+      content="https://i.postimg.cc/tg0HCSg6/logo.png"
+    />
+    <title>FindRoom</title>
+    <style>
+      html,
+      body,
+      #map {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 90%;
+      }
+    </style>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script src="https://apis.mappls.com/advancedmaps/api/d9d33951f018bba12d2c2270f79b769e/map_sdk?layer=vector&v=3.0&callback=initMap1"></script>
+  </head>
+  <body>
+    <div class="search">
+      <input type="text" id="room" placeholder="Enter room no." />
+      <button id="search">Search</button>
+    </div>
+    <div id="result"></div>
+    <div id="map"></div>
+  </body>
+  <script src="./script.js"></script>
+</html>

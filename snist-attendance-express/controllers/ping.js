@@ -6,13 +6,13 @@ function checkServerStatus() {
   return new Promise((resolve, reject) => {
     const client = new net.Socket();
 
-    client.setTimeout(2000);
+    client.setTimeout(3000);
 
     client.on("connect", () => {
       client.end();
       resolve({
         success: true,
-        data: { message: "Server is up and reachable." },
+        data: { message: "Server reachable" },
       });
     });
 
@@ -20,7 +20,7 @@ function checkServerStatus() {
       client.destroy();
       resolve({
         success: false,
-        data: { message: "Server is not reachable. " },
+        data: { message: "Server not reachable" },
       });
     });
 
@@ -28,7 +28,7 @@ function checkServerStatus() {
       client.destroy();
       resolve({
         success: false,
-        data: { message: "Server is not reachable. " },
+        data: { message: "Server not reachable" },
       });
     });
 

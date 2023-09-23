@@ -37,8 +37,17 @@ export default function Dashboard() {
   const [months, setMonths] = React.useState([]);
   const [refreshing, setRefreshing] = React.useState(false);
 
+  const trigger = () => {
+    let time = createDateFromDateTimeString(sessionData.data.time);
+    let now = new Date();
+    let diff = Math.floor((now - time) / 60000);
+    if (diff >= 50) {
+      dispatch(refresh());
+    }
+  };
+
   React.useEffect(() => {
-    if (sessionData.data !== null && sessionData.data.success === true) {
+    if (sessionData.data && sessionData.data.success) {
       setName(sessionData.data.data.name);
       setMonths(process(sessionData.data.data.monthlyData));
       setRefreshing(sessionData.loading);
@@ -46,23 +55,8 @@ export default function Dashboard() {
       dispatch(logout());
       navigate("/");
     }
+    trigger();
   }, [sessionData]);
-
-  React.useEffect(() => {
-    if (sessionData.data == null) {
-      dispatch(logout());
-      navigate("/");
-    }
-    let time = createDateFromDateTimeString(sessionData.data.time);
-    let now = new Date();
-    let diff = Math.floor((now - time) / 60000);
-    if (diff >= 50) {
-      dispatch(refresh());
-      console.log("refresh");
-    } else {
-      // prevent refresh
-    }
-  }, []);
 
   return (
     <div>

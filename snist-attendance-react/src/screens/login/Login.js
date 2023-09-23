@@ -37,30 +37,26 @@ export default function Login() {
   const [showPassword, setShowPassword] = React.useState(false);
 
   React.useEffect(() => {
-    dispatch(ping());
-  }, []);
-
-  React.useEffect(() => {
-    if (serverStatus.data.success === true) {
-      setDisabled(false);
-      setMessage("Login");
-    } else {
-      if (serverStatus.loading === false) {
+    if (serverStatus.loading === false) {
+      if (serverStatus.data.success === true) {
+        setDisabled(false);
+        setMessage("Login");
+      } else {
         setMessage("Server not reachable");
       }
+    } else {
+      dispatch(ping());
     }
-  }, [serverStatus]);
 
-  React.useEffect(() => {
-    if (
-      sessionData.data &&
-      sessionData.loading === false &&
-      sessionData.data.success === false
-    ) {
-      setError(true);
-      setHelperText(sessionData.data.data.message);
+    if (sessionData.data && sessionData.loading === false) {
+      if (sessionData.data.success === false) {
+        setError(true);
+        setHelperText(sessionData.data.data.message);
+      } else {
+        navigate("/dashboard");
+      }
     }
-  }, [sessionData]);
+  }, [serverStatus, sessionData]);
 
   const handleClickShowPassword = () => {
     setShowPassword(!showPassword);
@@ -86,7 +82,7 @@ export default function Login() {
   if (sessionData.loading) {
     return <Loading />;
   } else if (sessionData.data && sessionData.data.success) {
-    navigate("/dashboard");
+    return;
   } else {
     return (
       <div className="login-page">

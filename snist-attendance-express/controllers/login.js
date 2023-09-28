@@ -26,6 +26,7 @@ function getAttendanceConfig(cookie, rollno) {
       Host: HOST,
       Referer: `http://${HOST}/student/index.php?studentid=${rollno}&no=0&val=1`,
       Connection: "keep-alive",
+      "Accept-Encoding": "gzip, deflate",
     },
   };
 }
@@ -79,7 +80,18 @@ async function login(body) {
 
     let attendanceHTML;
     try {
-      attendanceHTML = await attendance.text();
+      const reader = await attendance.body.getReader();
+      let textDecoder = new TextDecoder("utf-8");
+      let text = "";
+
+      while (true) {
+        const { done, value } = await reader.read();
+        let ttext = textDecoder.decode(value);
+        text += ttext;
+        if (ttext.includes("</html>") || done) break;
+      }
+
+      attendanceHTML = text;
     } catch (e) {
       resolve(errorCredentials);
       return;
